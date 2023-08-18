@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Articles Website{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1 style="color:red;margin-right:40px;"> Latest Updates in Tech </h1>
+        <nav>
+            <ul>
+
+                <li><button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Home</button></li>
+                <li><button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Latest Articles</button></li>
+                <li><button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Showbiz</button></li>
+
+                <li><button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Sports</button></li>
+
+
+
+                <!-- Add more navigation links as needed -->
+           </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Content from child templates will be inserted here -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Articles Website</p>
+    </footer>
+</body>
+</html>
