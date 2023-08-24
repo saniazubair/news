@@ -6,7 +6,8 @@
     {% for article in articles %}
         <li>
             <h2>{{ article.title }}</h2>
-            <p>{{ article.content|safe }}</p>
+            <p>{{ article.content|safe|truncatechars:"250"|capfirst}}</p>
+            <a href="{% url 'article_detail' article.id %}">Read More</a>
             <p>Published on: {{ article.pub_date }}</p>
         </li>
     {% endfor %}
