@@ -20,9 +20,9 @@
             <h2>
                 <div style="background-color:red; width:100%; height:35px;justify-content: center;">
 
-                <button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Home</button>              <button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Latest Articles</button></li>
-                <button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Showbiz</button>
-                <button type="button" class="btn btn-secondary" href="{% url 'article_list' %}" role="button">Sports</button>
+                {% for i in category %}
+                <a  href="{% url 'category_detail' i.id %}"> <button type="button" class="btn btn-secondary" role="button">{{i.name}}</button></a>
+                {% endfor %}
 
                 </div>
 
